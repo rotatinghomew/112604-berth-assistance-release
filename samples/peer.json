@@ -1,0 +1,73 @@
+[
+  [
+    "POST",
+    "/assists/P1-Q41/cancel",
+    {},
+    [
+      [
+        200,
+        {
+          "ref": "P1-Q41",
+          "call": "Q41",
+          "group": "P1",
+          "action": "approach",
+          "state": "on_board"
+        }
+      ]
+    ]
+  ],
+  [
+    "GET",
+    "/assists/P1-Q41",
+    null,
+    [
+      [
+        200,
+        {
+          "ref": "P1-Q41",
+          "call": "Q41",
+          "group": "P1",
+          "action": "approach",
+          "state": "on_board"
+        }
+      ],
+      [
+        200,
+        {
+          "ref": "P1-Q41",
+          "call": "Q41",
+          "group": "P1",
+          "action": "approach",
+          "state": "completed"
+        }
+      ]
+    ]
+  ],
+  [
+    "GET",
+    "/assists/T1-Q41-depart",
+    null,
+    [
+      [
+        200,
+        {
+          "ref": "T1-Q41-depart",
+          "call": "Q41",
+          "group": "T1",
+          "action": "departure",
+          "state": "dispatched"
+        }
+      ],
+      [
+        200,
+        {
+          "ref": "T1-Q41-depart",
+          "call": "Q41",
+          "group": "T1",
+          "action": "departure",
+          "state": "completed"
+        }
+      ]
+    ]
+  ]
+]

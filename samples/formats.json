@@ -1,0 +1,110 @@
+{
+  "feeds": {
+    "vessels": {
+      "key": [
+        "call"
+      ],
+      "fields": {
+        "call": "string",
+        "beam_m": "int",
+        "draft_dm": "int",
+        "eta": "time",
+        "work_minutes": "int",
+        "latest_exit": "time",
+        "assist_required": "list"
+      },
+      "note": "assist_required 为每次动作需要的协助种类，包括 pilot 和 tug。draft_dm 为分米。"
+    },
+    "windows": {
+      "key": [
+        "berth",
+        "revision",
+        "from"
+      ],
+      "fields": {
+        "berth": "string",
+        "revision": "int",
+        "from": "time",
+        "until": "time",
+        "draft_dm": "int",
+        "beam_m": "int"
+      },
+      "note": "from/until 表示可进行进出动作的窗口。作业期间如果没有动作可连续系泊，左闭右开。"
+    },
+    "assist": {
+      "key": [
+        "group",
+        "from"
+      ],
+      "fields": {
+        "group": "string",
+        "agency": "string",
+        "kind": "string",
+        "from": "time",
+        "until": "time",
+        "max_draft_dm": "int"
+      },
+      "note": "group 为对端的真实值班组标识。"
+    },
+    "quay_events": {
+      "key": [
+        "event"
+      ],
+      "fields": {
+        "event": "string",
+        "call": "string",
+        "berth": "string",
+        "kind": "string",
+        "at": "time"
+      },
+      "note": "kind 为 all_fast 或 lines_clear，分别指实际完成系缆与安全释放泊位的解缆时点。"
+    },
+    "shift_updates": {
+      "key": [
+        "update"
+      ],
+      "fields": {
+        "update": "string",
+        "berth": "string",
+        "new_revision": "int",
+        "announced_at": "time",
+        "reported_clear": "time"
+      },
+      "note": "码头公布泊位窗口修订与预计腾出时间，预计不替代实际离泊记录。"
+    }
+  },
+  "references": [
+    [
+      "quay_events",
+      [
+        "call"
+      ],
+      "vessels",
+      [
+        "call"
+      ]
+    ],
+    [
+      "quay_events",
+      [
+        "berth"
+      ],
+      "windows",
+      [
+        "berth"
+      ]
+    ],
+    [
+      "shift_updates",
+      [
+        "berth",
+        "new_revision"
+      ],
+      "windows",
+      [
+        "berth",
+        "revision"
+      ]
+    ]
+  ]
+}

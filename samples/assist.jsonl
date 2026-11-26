@@ -1,0 +1,3 @@
+{"group": "P1", "agency": "pilot-A", "kind": "pilot", "from": "2026-11-27T01:00:00Z", "until": "2026-11-27T05:00:00Z", "max_draft_dm": 105}
+{"group": "T1", "agency": "tug-A", "kind": "tug", "from": "2026-11-27T01:00:00Z", "until": "2026-11-27T05:00:00Z", "max_draft_dm": 105}
+{"group": "T2", "agency": "tug-B", "kind": "tug", "from": "2026-11-27T01:35:00Z", "until": "2026-11-27T05:20:00Z", "max_draft_dm": 90}
